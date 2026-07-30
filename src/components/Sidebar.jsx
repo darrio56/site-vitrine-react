@@ -24,7 +24,7 @@ export default function Sidebar({ open, onClose }) {
 
         <div className="sidebar-profile">
           <img
-            src="/hugues1.jpeg"
+            src="hugues1.jpeg"
             alt="Portrait de ONONO Hugues"
             className="sidebar-avatar"
           />
