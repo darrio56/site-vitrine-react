@@ -107,7 +107,7 @@ export default function Header({ onOpenMenu }) {
         </p>
       </div>
 
-      <img src="hugues1.jpeg" alt="" className="hero-photo" aria-hidden="true" />
+      <img src="/hugues1.jpeg" alt="" className="hero-photo" aria-hidden="true" />
     </header>
   )
 }
