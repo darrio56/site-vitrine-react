@@ -4,7 +4,7 @@ const EDUCATION = [
     title: "Mémoire de fin d'études — Diplôme d'ingénieur",
     place: 'École Nationale Supérieure Polytechnique, Université de Yaoundé I',
     detail:
-      "Automatisation de la validation d'identité par reconnaissance d'image et extraction d'informations à partir de pièces d'identité — approche par Deep Learning et OCR.",
+      "travail en évolution",
   },
 ]
 

@@ -13,7 +13,7 @@ Puis ouvre l'URL affichée (en général `http://localhost:5173`).
 
 ## Ce qu'il te reste à faire
 
-1. Remplace `public/profile-placeholder.jpg` par tes vraies photos.
+1. Remplace `public/profile-placeholder.jpg` par tes vraies photos dans ce cas (|hugues1.jpeg|) doit être remplacer par votre photo.
 2. Relis chaque composant dans `src/components/` — ils sont volontairement
    simples pour que tu puisses les modifier facilement.
 3. Le formulaire de contact (`Contact.jsx`) ne fait qu'un `console.log` pour
