@@ -35,8 +35,8 @@ function NetworkCanvas() {
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.fillStyle = 'rgba(198, 116, 31, 0.55)' // --accent
-      ctx.strokeStyle = 'rgba(198, 116, 31, 0.15)'
+      ctx.fillStyle = 'rgba(124, 92, 252, 0.6)' // --accent
+      ctx.strokeStyle = 'rgba(124, 92, 252, 0.18)'
 
       for (const node of nodes) {
         if (!prefersReducedMotion) {

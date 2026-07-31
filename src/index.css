@@ -3,15 +3,15 @@
    + un fond papier chaud plutôt que le "cream + terracotta" par défaut.
 */
 :root {
-  --bg: #f6f2e9;
-  --surface: #ffffff;
-  --ink: #17140f;
-  --ink-soft: #4a453c;
-  --sidebar: #121016;
-  --sidebar-ink: #efe9dd;
-  --accent: #c6741f;
-  --accent-dim: #e7b57c;
-  --line: #e6ddc9;
+  --bg: #0b0b10;
+  --surface: #16151c;
+  --ink: #f3f1f7;
+  --ink-soft: #9c99a8;
+  --sidebar: #0b0b10;
+  --sidebar-ink: #f3f1f7;
+  --accent: #7c5cfc;
+  --accent-dim: #4a3a99;
+  --line: #2a2836;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -167,8 +167,8 @@ button {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: none;
-  background: var(--ink);
+  border: 1px solid var(--line);
+  background: var(--surface);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +180,7 @@ button {
 .menu-button span {
   width: 18px;
   height: 2px;
-  background: var(--sidebar-ink);
+  background: var(--ink);
   border-radius: 1px;
 }
 
