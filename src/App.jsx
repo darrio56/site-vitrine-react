@@ -6,6 +6,7 @@ import Resume from './components/Resume.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Services from './components/Services.jsx'
 import Contact from './components/Contact.jsx'
+import ChatWidget from './components/chatwidget.jsx'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -13,14 +14,16 @@ export default function App() {
   return (
     <>
       <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <Header onOpenMenu={() => setMenuOpen(true)} />
-      <main>
+      <div className='scroll-container' id='scrollContainer'>
+        <Header onOpenMenu={() => setMenuOpen(true)} />
+
         <About />
         <Resume />
         <Portfolio />
         <Services />
         <Contact />
-      </main>
+        <ChatWidget/>
+      </div>
     </>
   )
 }

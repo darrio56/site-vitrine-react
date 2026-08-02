@@ -8,6 +8,23 @@ const LINKS = [
 ]
 
 export default function Sidebar({ open, onClose }) {
+
+  function handleLinkClick(event, href){
+
+    event.preventDefault()
+    
+    const container =document.getElementById('scrollContainer')
+
+    const target=document.querySelector(href)
+
+    if(container && target){
+      container.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth', })
+    }
+    onClose()
+  }
+
   return (
     <>
       {/* overlay cliquable pour fermer sur mobile */}
@@ -39,7 +56,7 @@ export default function Sidebar({ open, onClose }) {
           <ul className="sidebar-nav">
             {LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={onClose}>
+                <a href={link.href} onClick={(event) => handleLinkClick(event, link.href)}>
                   {link.label}
                 </a>
               </li>

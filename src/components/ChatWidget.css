@@ -1,0 +1,203 @@
+/* ChatWidget.css
+   -----------------------------------------------------------------------------
+   Styles du widget de chat flottant.
+   Palette : on reste proche de l'identité de ton portfolio (à ajuster selon
+   tes couleurs actuelles) — ici un bleu nuit profond avec un accent corail
+   pour le bouton d'envoi, afin que le widget se distingue sans jurer.
+   ----------------------------------------------------------------------------- */
+
+/* Conteneur racine : positionné en fixed pour rester visible même en scrollant */
+.chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000; /* Au-dessus du reste du contenu de la page */
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Bulle flottante (bouton rond) visible quand le chat est fermé */
+.chat-bubble {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%; /* Cercle parfait */
+  background-color: #16213e; /* Bleu nuit */
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease; /* Légère animation au survol */
+}
+
+.chat-bubble:hover {
+  transform: scale(1.08);
+}
+
+/* Fenêtre de chat complète */
+.chat-window {
+  width: 340px;
+  height: 460px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Empêche le contenu de déborder des coins arrondis */
+}
+
+/* En-tête de la fenêtre (titre + bouton fermer) */
+.chat-header {
+  background-color: #16213e;
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.chat-close:hover {
+  opacity: 1;
+}
+
+/* Zone défilable contenant les messages */
+.chat-messages {
+  flex: 1; /* Prend tout l'espace restant entre le header et l'input */
+  overflow-y: auto; /* Scroll vertical si trop de messages */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f7f7fb;
+}
+
+/* Style commun à toutes les bulles de message */
+.chat-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap; /* Respecte les retours à la ligne du texte */
+}
+
+/* Message envoyé par le visiteur : aligné à droite, fond corail */
+.chat-message-user {
+  align-self: flex-end;
+  background-color: #d97757;
+  color: white;
+  border-bottom-right-radius: 4px; /* Petit détail visuel "pointe" vers l'utilisateur */
+}
+
+/* Message de l'assistant : aligné à gauche, fond gris clair */
+.chat-message-assistant {
+  align-self: flex-start;
+  background-color: #e9e9f2;
+  color: #1a1a2e;
+  border-bottom-left-radius: 4px;
+}
+
+/* Message d'erreur */
+.chat-error {
+  align-self: center;
+  color: #b3261e;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+/* Indicateur "en train d'écrire" : trois points animés */
+.chat-message-loading {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.chat-message-loading .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #888;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+/* On décale l'animation de chaque point pour créer un effet de vague */
+.chat-message-loading .dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.chat-message-loading .dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Zone de saisie en bas de la fenêtre */
+.chat-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #eaeaea;
+  background-color: white;
+}
+
+.chat-input {
+  flex: 1;
+  resize: none; /* Empêche l'utilisateur de redimensionner manuellement le textarea */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  max-height: 80px;
+}
+
+.chat-input:focus {
+  outline: 2px solid #0f3460; /* Focus visible, important pour l'accessibilité */
+  border-color: transparent;
+}
+
+.chat-send {
+  background-color: #d97757;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.chat-send:hover:not(:disabled) {
+  background-color: #c2653f;
+}
+
+.chat-send:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Adaptation mobile : la fenêtre prend presque tout l'écran */
+@media (max-width: 480px) {
+  .chat-window {
+    width: calc(100vw - 32px);
+    height: 70vh;
+  }
+}

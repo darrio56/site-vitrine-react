@@ -36,6 +36,16 @@ body {
   font-family: var(--font-body);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.scroll-container > *{
+  scroll-snap-align: start;
 }
 
 h1,
@@ -73,6 +83,10 @@ a {
   max-width: 880px;
   margin: 0 auto;
   padding: 6rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 640px) {
