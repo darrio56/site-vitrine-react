@@ -6,7 +6,7 @@ import Resume from './components/Resume.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Services from './components/Services.jsx'
 import Contact from './components/Contact.jsx'
-import ChatWidget from './components/chatwidget.jsx'
+import ChatWidget from './components/ChatWidget.jsx'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
